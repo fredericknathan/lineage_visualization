@@ -2,11 +2,11 @@
 function drawGraph(data) {
 
     var list = [];
-
     for (var i = 0; i < data.length; i++) {
         var now = data[i];
         var obj = {
             "value": now.value,
+            "pv": now.pv,
             "children": [].concat(now.children),
             "parent": now.parent
         }
@@ -85,7 +85,7 @@ function drawGraph(data) {
             return i * 90;
         })
         .text(function (d) {
-            return d.value;
+            return d.value + ' - ' + d.pv.toLocaleString('en-US');
         })
         .style("visibility",function(d){
             return d.value == "Empty"? "hidden" : "visible"

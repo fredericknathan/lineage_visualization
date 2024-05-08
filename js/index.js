@@ -2,16 +2,16 @@ const output = document.getElementById("tree");
 
 function getInput() {
     const value = document.getElementById("inp").value;
-    var arr = value.split(" ")
+    var arr = value.split("\n")
     var num = [];
 
     for (var i = 0; i < arr.length; i++) {
-        if (!isNaN(arr[i]) && arr[i] != "\n") {
-            num.push(arr[i])
-        }
+        num.push(arr[i])
     }
+
     return num
 }
+
 
 function action() {
     getRoot()
@@ -193,13 +193,12 @@ function fillTheCircle(root, value) {
 
 function fillToColor(value, color) {
     var circles = document.querySelectorAll(".node");
-
     circles.forEach((circle, i) => {
         circle.firstChild.classList.remove("green")
         circle.firstChild.classList.remove("gold")
         circle.firstChild.classList.remove("gray")
         if (circle.lastChild.innerHTML === value) {
-
+            
             setTimeout(() => {
                 circle.firstChild.classList.add(color)
             }, i * 100)

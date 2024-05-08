@@ -85,6 +85,12 @@ body{
     text-align: center;
 }
 
+.container h2{
+    position: relative;
+    top: -10px;
+    text-align: center;
+}
+
 .btn-container{
     position: relative;
     width: 80%;

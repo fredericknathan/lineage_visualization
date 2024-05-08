@@ -7,31 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="style.css">
-    <title>Binary Tree</title>
+    <title>Lineage Visualization</title>
 </head>
 
 <body>
     <div class="container">
-        <h1>Binary Tree Visualization</h1>
+        <h1>Lineage Visualization</h1>
+        <h2>Input Format</h2>
+        <div class="findContainer">
+            <div class="h3">NAME</div>
+            <div class="h3">PV</div>
+            <div class="h3">MEMBER 1 NAME;MEMBER 2 NAME</div>
+        </div>
         <div class="findContainer"></div>
-        <textarea oninput="action()" type="number" placeholder='Enter an array which is separated with space. The root is first element.
-Ex: 5 9 1 3 7' id="inp" cols="30" rows="10"></textarea>
-        <div class="btn-container">
+        <textarea oninput="action()" type="text" placeholder='Enter' id="inp" cols="30" rows="10"></textarea>
+        <!-- <div class="btn-container">
             <button class="btn-clear" onclick="clearAndCreate()">Clear</button>
             <button class="btn" disabled onclick="toggleLock()">Lock</button>
+        </div> -->
+        <div class="findContainer">
+            <input type="text" id="fname" name="fname" onchange="getTotalPvStart(this.value)">
         </div>
-
+        <span class="findContainer" id="total_left"></span>
+        <span class="findContainer" id="total_right"></span>
         <div class="box graph" id="tree"></div>
 
     </div>
 
-    <a href="https://github.com/saliherdemk/Binary-Tree-Visualization" target="blank">
-        <img src="media/githubLogo.png" alt="" id="github" style="position: absolute;right:0px">
-    </a>
-
 </body>
 <script src="./js/index.js"></script>
-<script src="./js/binaryTree.js"></script>
+<script src="./js/memberTree.js"></script>
+<!-- <script src="./js/binaryTree.js"></script> -->
 <script src="./js/draw.js"></script>
 <script src="./js/d3js.js"></script>
 
